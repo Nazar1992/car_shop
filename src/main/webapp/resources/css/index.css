@@ -1,0 +1,99 @@
+
+body {
+    background-color: #F2EEE9;
+    color: #333;
+    height: 100%;
+}
+
+.wrapper {
+    width: 1100px;
+    padding: 20px;
+    margin: 20px auto 40px;
+}
+
+h1 {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 4px 20px;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.cars {
+    display: inline-block;
+    min-height: 100%;
+    margin: 20px 100px 40px;
+}
+
+.car {
+    background-color: rgba(238, 229, 20, 0.72);
+    float: left;
+    margin: 0 10px 10px 0;
+    width: 270px;
+    padding: 10px;
+    height: 380px;
+}
+
+.car img {
+    display: block;
+    margin: auto;
+    max-height: 130px;
+    max-width: 280px;
+}
+
+.table img {
+    display: block;
+    margin: auto;
+    max-height: 130px;
+    max-width: 280px;
+}
+
+h2 {
+    font-size: 16px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 10px 0;
+    padding: 0 0 5px 0;
+}
+
+span {
+    float: right;
+}
+
+.cart_anchor {
+    display: inline-block;
+    background: url('http://cdn1.iconfinder.com/data/icons/jigsoar-icons/24/_cart.png') no-repeat 0 0;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px 0 0;
+}
+
+.pageable{
+    margin-bottom: 60px;
+}
+
+li {
+    display: block;
+    float:left;
+
+}
+
+li span {
+    padding: 5px 45px 5px 15px;
+    text-decoration:none;
+    color:#666;
+    cursor: pointer;
+}
+
+li span.active {
+    background: #e95a44;
+    color:#fff;
+}
+

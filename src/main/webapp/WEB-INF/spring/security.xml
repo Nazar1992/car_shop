@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <import resource="applicationContext.xml"/>
+
+    <!-- UNPROTECTED RESOURCES -->
+    <security:http pattern="/favicon.ico" security="none"/>
+    <security:http pattern="/resources/**" security="none"/>
+
+    <security:http use-expressions="true">
+        <security:form-login login-page="/signUp" login-processing-url="/login"
+                              authentication-success-forward-url="/"
+                              authentication-failure-forward-url="/failureLogin"
+                              default-target-url="/" always-use-default-target="true" />
+        <security:logout logout-url="/"
+                         success-handler-ref="logoutSuccessHandler"/>
+        <security:intercept-url pattern="/listOfCars" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/listOfCategories" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/listOfBillables" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/car" access="hasRole('ROLE_ADMIN')"/>
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+            </security:user-service>
+        </security:authentication-provider>
+        <security:authentication-provider user-service-ref="userDetailsService">
+            <security:password-encoder ref="encoder"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+    </bean>
+    <bean id="logoutSuccessHandler"
+                class="com.car_shop.security.CustomLogoutSuccessHandler" />
+
+</beans>

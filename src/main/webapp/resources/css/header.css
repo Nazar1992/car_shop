@@ -1,0 +1,56 @@
+
+body {
+    padding-top: 100px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fixed-header, .fixed-footer {
+    width: 100%;
+    position: fixed;
+    background: #3ab7a5;
+    padding: 10px 0;
+    color: #fff;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.80;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+
+.fixed-header {
+    top: 0;
+}
+
+.fixed-footer {
+    bottom: 0;
+    height: 40px;
+}
+
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 25px;
+    display: inline-block;
+}
+
+.container p {
+    line-height: 200px;
+}
+
+li {
+    display: block;
+    float:left;
+}
+
+li span {
+    padding: 5px 45px 5px 15px;
+    text-decoration:none;
+    color:#666;
+    cursor: pointer;
+}
